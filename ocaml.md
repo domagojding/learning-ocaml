@@ -1,4 +1,23 @@
+References:
+* Installing: https://cs3110.github.io/textbook/chapters/preface/install.html
+* Cornell OCaml course: https://youtube.com/playlist?list=PLre5AT9JnKShBOPeuiD9b-I4XROIJhkIU&si=HLfPdTSO4VUKaaR-
+* The Value of Values talk by Rich Hickey: https://youtu.be/-6BsiVyC1kM?si=D_Zv1W7ySNu3dpDW
+  * Slides and trascript: https://github.com/matthiasn/talk-transcripts/blob/master/Hickey_Rich/ValueOfValues.md
+* CS 51, Programming Well: https://book.cs51.io/pdfs/abstraction.pdf
+  
 Expressions (a value is an expression that does need any further evaluation)
+
+Interesting way to introduce recursion, well it's not really but we are kind of defining `b` in terms of `a` so the outer scope value is called in the inner scope:
+```ocaml
+utop # let a = 2 in (let b = a in a + b);;
+- : int = 4
+```
+Which is the same as:
+```ocaml
+utop # let a = 2 in a + a;;
+- : int = 4
+```
+
 
 ```ocaml
 3110;;
